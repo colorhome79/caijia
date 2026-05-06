@@ -567,14 +567,12 @@ function sendToLine() {
   var identity = document.querySelector('select').value || '（未選擇）';
   var message  = document.querySelector('textarea').value || '（未填）';
 
-  var text = '【彩家生活詢價需求】\n'
-           + '------------------------\n'
+  var text = '【彩家生活詢價需求】\n\n'
            + '姓名：' + name + '\n'
            + '電話：' + phone + '\n'
            + '信箱：' + email + '\n'
            + '身份：' + identity + '\n'
-           + '需求：' + message + '\n'
-           + '------------------------';
+           + '需求：' + message;
 
   // 複製到剪貼簿
   navigator.clipboard.writeText(text).then(function() {
