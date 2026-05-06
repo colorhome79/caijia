@@ -560,7 +560,7 @@
   function openMap()  { window.open(MAP_URL, '_blank'); }
 
   renderCatalog('all');
-  function sendToLine() {
+function sendToLine() {
   var name     = document.querySelector('input[placeholder="您的姓名"]').value || '（未填）';
   var phone    = document.querySelector('input[placeholder="聯絡電話"]').value || '（未填）';
   var email    = document.querySelector('input[placeholder="電子信箱"]').value || '（未填）';
@@ -577,8 +577,7 @@
            + '------------------------';
 
   var encoded = encodeURIComponent(text);
-  window.open('https://line.me/R/oaMessage/@' + 'SBLCLlN' + '/?text=' + encoded, '_blank');
-}
+  window.open('https://line.me/R/oaMessage/@' + 'SBLCLlN' + '/?text=' + encoded, '_blank');}
 </script>
 </body>
 </html>
