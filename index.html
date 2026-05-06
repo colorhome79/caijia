@@ -576,6 +576,16 @@ function sendToLine() {
            + '需求：' + message + '\n'
            + '------------------------';
 
+  // 複製到剪貼簿
+  navigator.clipboard.writeText(text).then(function() {
+    alert('✅ 詢價資料已複製！\n\n接下來請：\n1. 點「確定」\n2. 開啟 LINE 彩家生活官方帳號\n3. 在對話框貼上（長按→貼上）\n4. 按傳送即可！');
+    window.open('https://lin.ee/SBLCLlN', '_blank');
+  }).catch(function() {
+    // 若剪貼簿失敗，直接顯示資料讓客人手動複製
+    alert('請複製以下資料，貼到 LINE 對話框：\n\n' + text);
+    window.open('https://lin.ee/SBLCLlN', '_blank');
+  });
+}
   var encoded = encodeURIComponent(text);
   window.open('https://line.me/R/ti/p/SBLCLlN?text=' + encoded, '_blank');
 </script>
