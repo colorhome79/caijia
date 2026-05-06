@@ -560,6 +560,25 @@
   function openMap()  { window.open(MAP_URL, '_blank'); }
 
   renderCatalog('all');
+  function sendToLine() {
+  var name     = document.querySelector('input[placeholder="您的姓名"]').value || '（未填）';
+  var phone    = document.querySelector('input[placeholder="聯絡電話"]').value || '（未填）';
+  var email    = document.querySelector('input[placeholder="電子信箱"]').value || '（未填）';
+  var identity = document.querySelector('select').value || '（未選擇）';
+  var message  = document.querySelector('textarea').value || '（未填）';
+
+  var text = '【彩家生活詢價需求】\n'
+           + '------------------------\n'
+           + '姓名：' + name + '\n'
+           + '電話：' + phone + '\n'
+           + '信箱：' + email + '\n'
+           + '身份：' + identity + '\n'
+           + '需求：' + message + '\n'
+           + '------------------------';
+
+  var encoded = encodeURIComponent(text);
+  window.open('https://line.me/R/oaMessage/@' + 'SBLCLlN' + '/?text=' + encoded, '_blank');
+}
 </script>
 </body>
 </html>
